@@ -1,2 +1,52 @@
-<h1>BulletinBoard#index</h1>
-<p>Find me in app/views/bulletin_board/index.html.erb</p>
+<%# <h1>BulletinBoard#index</h1> %>
+<%# <p>Find me in app/views/bulletin_board/index.html.erb</p> %>
+<!DOCTYPE html>
+
+<%# ---------------------------------------------------------------- %>
+<%# ユーザ入力フォーム %>
+<%# ---------------------------------------------------------------- %>
+<table class="form">
+<%= form_tag(controller: "bulletin_board", action: "index") do %>
+<tr>
+    <td>NAME: </td>
+    <td><%= text_field_tag("name") %></td>
+</tr>
+<tr>
+    <td>MESSAGE: </td>
+    <td><%= text_area_tag("msg", '', size: "50x5") %></td>
+</tr>
+<tr>
+    <td></td>
+    <td><%= submit_tag("SUBMIT") %></td>
+</tr>
+<% end %>
+</table>
+
+<%# ---------------------------------------------------------------- %>
+<%# テーブル %>
+<%# ---------------------------------------------------------------- %>
+<table class="board">
+<%# テーブルの表示列名 %>
+<tr>
+    <th style="width:50%">MESSAGE</th>
+    <th>NAME</th>
+    <th>SUBMITTED_DATETIME</th>
+</tr>
+<%# テーブルに表示するデータ %>
+<% @bb_table.each do |key,obj| %>
+<tr>
+    <td class="msg"><%= obj['msg']%></td>
+    <td class="name"><%= obj['name']%></td>
+    <%# Time.at() は UNIXTIME を返す %>
+    <td class="datetime"><%= Time.at(key.to_i) %></td>
+</tr>
+<% end %>
+</table>
+
+<%# ---------------------------------------------------------------- %>
+<p><%= "備忘録240303: TODO: テーブルを全削除するボタンの実装" %></p>
+<p><%= "備忘録240303: TODO: テーブルの任意の投稿を削除するボタンの実装" %></p>
+<p><%= "備忘録240303: SUBMIT押下したのち、F5リロードすると、前回投稿が再投稿されてしまう問題あり" %></p>
+<p><%= "備忘録240303: フォーム内が空でもSUBMITできてしまう問題あり" %></p>
+
+<%# EOF %>

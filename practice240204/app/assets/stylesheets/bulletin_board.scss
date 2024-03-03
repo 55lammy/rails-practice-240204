@@ -1,3 +1,58 @@
 // Place all the styles related to the bulletin-board controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1.title {
+    font-size: 20pt;
+    color: #999;
+}
+
+// index.html.erb 内に定義したクラス
+.form {
+    margin: 50px 0px;
+}
+
+.form tr td {
+    color: #999;
+    padding: 0px 10px;
+    font-size: 14px;
+}
+
+th {
+    background-color: #999;
+    color: #eee;
+    font-size: 14pt;
+    padding: 2px;
+}
+
+// index.html.erb 内に定義したクラス
+.board tr td {
+    background-color: #eee;
+    color: #666;
+    padding: 10px 5px;
+}
+
+// index.html.erb 内に定義したデータ名
+td.msg {
+    font-size: 12pt;
+}
+
+td.name {
+    font-size: 12pt;
+}
+
+td.datetime {
+    font-size: 9pt;
+}
+
+div.footer {
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+    border-color: #999;
+    margin: 50px 0px 0px 0px;
+    padding: 3px 0px 0px 0px;
+    color: #999;
+    font-size: 12pt;
+    text-align: left;
+    font-size: 9pt;
+}
