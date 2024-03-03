@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%# パーシャルファイルをrenderで呼び出し %>
+    <%= render template:'layouts/_study01_header' %>
+
+    <%# controller内のアクションでのページ内容の表示 %>
+    <%= yield %>
+
+    <div> </div>
+
+    <%# 罫線描画 %>
+    <hr size="1" color="#aaa">
+
+    <%# パーシャルファイルをrenderで呼び出し %>
+    <%= render template:'layouts/_study01_footer' %>
+  </body>
+</html>
